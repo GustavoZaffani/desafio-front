@@ -35,10 +35,9 @@
                    class="form-control"
                    formControlName="nome"
                    pInputText>
-            <div *ngIf="form.get('nome').invalid && (form.get('nome').dirty || form.get('nome').touched)"
-                 class="alert alert-danger">
-              Campo Obrigatório
-            </div>
+            <app-form-error [form]="form"
+                            inputName="nome"
+                            validationMessage="Campo obrigatório"></app-form-error>
           </div>
         </div>
       </div>
@@ -55,11 +54,9 @@
                         formControlName="unidadeMedida"
                         name="unidadeMedidaItem">
             </p-dropdown>
-            <div
-              *ngIf="form.get('unidadeMedida').invalid && (form.get('unidadeMedida').dirty || form.get('unidadeMedida').touched)"
-              class="alert alert-danger">
-              Campo Obrigatório
-            </div>
+            <app-form-error [form]="form"
+                            inputName="unidadeMedida"
+                            validationMessage="Campo obrigatório"></app-form-error>
           </div>
         </div>
 
@@ -80,7 +77,6 @@
           </div>
         </div>
 
-
         <div class="col-md-4">
           <div class="form-group">
             <label for="precoItem">Preço</label>
@@ -92,10 +88,9 @@
                    formControlName="preco"
                    currencyMask
                    pInputText>
-            <div *ngIf="form.get('preco').invalid && (form.get('preco').dirty || form.get('preco').touched)"
-                 class="alert alert-danger">
-              Campo Obrigatório
-            </div>
+            <app-form-error [form]="form"
+                            inputName="preco"
+                            validationMessage="Campo obrigatório"></app-form-error>
           </div>
         </div>
       </div>
@@ -113,11 +108,9 @@
                                 [style]="{width: '100%'}"
                                 formControlName="isPerecivel">
             </p-triStateCheckbox>
-            <div
-              *ngIf="form.get('isPerecivel').invalid && (form.get('isPerecivel').dirty || form.get('isPerecivel').touched)"
-              class="alert alert-danger">
-              Campo Obrigatório
-            </div>
+            <app-form-error [form]="form"
+                            inputName="isPerecivel"
+                            validationMessage="Campo obrigatório"></app-form-error>
           </div>
         </div>
 
@@ -134,10 +127,9 @@
                         dateFormat="dd/mm/yy"
                         id="dtFabricaoItem"
                         name="dtFabricaoItem"></p-calendar>
-            <div *ngIf="form.get('dtFabricacao').invalid && (form.get('dtFabricacao').dirty || form.get('dtFabricacao').touched)"
-              class="alert alert-danger">
-              Campo Obrigatório
-            </div>
+            <app-form-error [form]="form"
+                            inputName="dtFabricacao"
+                            validationMessage="Campo obrigatório"></app-form-error>
           </div>
         </div>
 
@@ -154,10 +146,9 @@
                         dateFormat="dd/mm/yy"
                         id="dtValidadeItem"
                         name="dtValidadeItem"></p-calendar>
-            <div *ngIf="form.get('dtValidade').invalid && (form.get('dtValidade').dirty || form.get('dtValidade').touched)"
-              class="alert alert-danger">
-              Campo Obrigatório
-            </div>
+            <app-form-error [form]="form"
+                            inputName="dtValidade"
+                            validationMessage="Campo obrigatório"></app-form-error>
           </div>
         </div>
       </div>

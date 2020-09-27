@@ -1,0 +1,4 @@
+<div *ngIf="form.get(inputName).invalid && (form.get(inputName).dirty || form.get(inputName).touched)"
+     class="alert alert-danger">
+  {{validationMessage}}
+</div>

@@ -20,7 +20,7 @@ export class SidenavComponent implements OnInit {
     this.buildMenu();
     this.sidenavService.observable().subscribe(value => {
       this.display = value;
-    })
+    });
   }
 
   buildMenu() {

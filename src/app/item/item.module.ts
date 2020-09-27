@@ -4,7 +4,7 @@ import {ItemFormComponent} from './item.form.component';
 import {ItemListComponent} from './item.list.component';
 import {TableModule} from 'primeng/table';
 import {RouterModule} from '@angular/router';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 import {CardModule} from 'primeng/card';
 import {InputTextModule} from 'primeng/inputtext';
 import {CalendarModule} from 'primeng/calendar';
@@ -21,13 +21,13 @@ import {TriStateCheckboxModule} from 'primeng/tristatecheckbox';
 import {ItemService} from './item.service';
 import {EditModule} from '../geral/edit/edit.module';
 import {DeleteModule} from '../geral/delete/delete.module';
+import {FormErrorModule} from '../geral/formError/formError.module';
 
 @NgModule({
   imports: [
     CommonModule,
     TableModule,
     RouterModule,
-    FormsModule,
     CardModule,
     InputTextModule,
     CalendarModule,
@@ -43,7 +43,8 @@ import {DeleteModule} from '../geral/delete/delete.module';
     DecimalInputModule,
     TriStateCheckboxModule,
     EditModule,
-    DeleteModule
+    DeleteModule,
+    FormErrorModule
   ],
   declarations: [
     ItemFormComponent,

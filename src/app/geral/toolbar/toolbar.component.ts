@@ -9,7 +9,8 @@ import {SidenavService} from '../sidenav/sidenav.service';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor(private sidenavService: SidenavService) { }
+  constructor(private sidenavService: SidenavService) {
+  }
 
   ngOnInit(): void {
   }

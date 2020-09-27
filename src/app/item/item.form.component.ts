@@ -9,6 +9,7 @@ import {ItemService} from './item.service';
 import {DateUtil} from '../framework/util/date.util';
 import {OnlyNumberDirective} from '../framework/directives/onlyNumber/onlyNumber.directive';
 import {DecimalInputDirective} from '../framework/directives/decimalInput/decimalInput.directive';
+import {MessageUtil} from '../framework/util/message.util';
 
 @Component({
   selector: 'app-item-form',
@@ -54,7 +55,6 @@ export class ItemFormComponent implements OnInit {
       dtFabricacao: [null, Validators.required],
       dtValidade: [null]
     });
-
   }
 
 
@@ -67,8 +67,8 @@ export class ItemFormComponent implements OnInit {
         this.setMaxDateFabricacao();
         this.setDtValidadeRequired();
       })
-      .catch(reason => {
-        this.messageService.add({severity: 'error', summary: 'Atenção', detail: 'Ocorreu um erro ao buscar o registro'});
+      .catch(() => {
+        MessageUtil.messageError(this.messageService, 'Ocorreu um erro ao buscar o registro');
       });
   }
 
@@ -88,13 +88,14 @@ export class ItemFormComponent implements OnInit {
   saveItem() {
     if (this.form.valid) {
       const rawValue = this.form.getRawValue();
-      this.itemService.save(rawValue).then(value => {
-        this.messageService.add({severity: 'success', summary: 'Sucesso', detail: 'O registro foi salvo com sucesso'});
+      this.itemService.save(rawValue).then(() => {
+        MessageUtil.messageSuccess(this.messageService, 'O registro foi salvo com sucesso');
         this.backToList();
       }).catch(() => {
-        this.messageService.add({severity: 'error', summary: 'Atenção', detail: 'Ocorreu um erro ao salvar o registro'});
+        MessageUtil.messageError(this.messageService, 'Ocorreu um erro ao salvar o registro');
       });
     } else {
+      MessageUtil.messageInfo(this.messageService, 'Necessário preencher todos os campos obrigatórios');
       this.form.markAllAsTouched();
     }
   }
@@ -113,7 +114,6 @@ export class ItemFormComponent implements OnInit {
         }
       }
     }
-
   }
 
   qtdeKeyDown(event: KeyboardEvent) {
@@ -144,7 +144,6 @@ export class ItemFormComponent implements OnInit {
 
   setDtValidadeRequired() {
     const isPerecivel = this.form.get('isPerecivel').value;
-    console.log('teste');
     if (isPerecivel) {
       this.form.get('dtValidade').setValidators([Validators.required]);
       this.form.get('dtValidade').updateValueAndValidity();

@@ -35,23 +35,26 @@ export class ItemService {
 
   delete(id: number): Promise<void> {
     return new Promise<void>(resolve => {
-      const itens = this.findAll();
+      this.findAll().then(value => {
+        const itens = value;
+        let indexToEdit = null;
+        itens.forEach((itemFor, index) => {
+          if (itemFor.id === id) {
+            indexToEdit = index;
+          }
+        });
 
-      let indexToEdit = null;
-      itens.forEach((itemFor, index) => {
-        if (itemFor.id === id) {
-          indexToEdit = index;
-        }
+        itens.splice(indexToEdit, 1);
+        localStorage.setItem('itens', JSON.stringify(itens));
+        resolve();
       });
-
-      itens.splice(indexToEdit, 1);
-      localStorage.setItem('itens', JSON.stringify(itens));
-      resolve();
     });
   }
 
-  findAll() {
-    return JSON.parse(localStorage.getItem('itens'));
+  findAll(): Promise<Item[]> {
+    return new Promise(resolve => {
+      resolve(JSON.parse(localStorage.getItem('itens')));
+    });
   }
 
   findById(id: number): Promise<Item> {

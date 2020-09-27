@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {ItemService} from './item.service';
 import {Item} from './item';
 import {ConfirmationService, MessageService} from 'primeng/api';
+import {MessageUtil} from '../framework/util/message.util';
 
 @Component({
   selector: 'app-item-list',
@@ -24,7 +25,10 @@ export class ItemListComponent implements OnInit {
   }
 
   findAll() {
-    this.itens = this.itemService.findAll();
+    this.itemService.findAll()
+      .then(value => {
+        this.itens = value;
+      });
   }
 
   openFormItem() {
@@ -41,14 +45,13 @@ export class ItemListComponent implements OnInit {
       accept: () => {
         this.itemService.delete(id)
           .then(() => {
-            this.messageService.add({severity: 'success', summary: 'Sucesso', detail: 'Registro removido com sucesso'});
+            MessageUtil.messageSuccess(this.messageService, 'Registro removido com sucesso');
             this.findAll();
           })
           .catch(() => {
-            this.messageService.add({severity: 'error', summary: 'Atenção', detail: 'Ocorreu um erro ao buscar o registro'});
+            MessageUtil.messageError(this.messageService, 'Ocorreu um erro ao buscar o registro');
           });
       }
     });
-
   }
 }
