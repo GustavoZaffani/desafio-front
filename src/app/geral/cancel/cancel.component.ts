@@ -1,11 +1,11 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
-  selector: 'app-voltar',
-  templateUrl: './voltar.component.html',
-  styleUrls: ['./voltar.component.css']
+  selector: 'app-cancel',
+  templateUrl: './cancel.component.html',
+  styleUrls: ['./cancel.component.css']
 })
-export class VoltarComponent {
+export class CancelComponent {
 
   @Output() onClick: EventEmitter<any> = new EventEmitter();
 

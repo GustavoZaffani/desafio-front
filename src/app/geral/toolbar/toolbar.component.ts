@@ -1,4 +1,5 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {SidenavService} from '../sidenav/sidenav.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,9 +9,12 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sidenavService: SidenavService) { }
 
   ngOnInit(): void {
   }
 
+  toogleSidenav() {
+    this.sidenavService.showSidenav(true);
+  }
 }

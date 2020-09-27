@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {EditComponent} from './edit.component';
+import {DeleteComponent} from './delete.component';
 import {TooltipModule} from 'primeng/tooltip';
 import {ButtonModule} from 'primeng/button';
 import {RippleModule} from 'primeng/ripple';
@@ -13,12 +13,12 @@ import {RippleModule} from 'primeng/ripple';
     RippleModule,
   ],
   declarations: [
-    EditComponent
+    DeleteComponent
   ],
   exports: [
-    EditComponent
+    DeleteComponent
   ]
 })
-export class EditModule {
+export class DeleteModule {
 
 }

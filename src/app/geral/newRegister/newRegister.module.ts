@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {SaveComponent} from './save.component';
+import {NewRegisterComponent} from './newRegister.component';
 import {TooltipModule} from 'primeng/tooltip';
 import {ButtonModule} from 'primeng/button';
 import {RippleModule} from 'primeng/ripple';
@@ -13,12 +13,12 @@ import {RippleModule} from 'primeng/ripple';
     RippleModule,
   ],
   declarations: [
-    SaveComponent
+    NewRegisterComponent
   ],
   exports: [
-    SaveComponent
+    NewRegisterComponent
   ]
 })
-export class SaveModule {
+export class NewRegisterModule {
 
 }

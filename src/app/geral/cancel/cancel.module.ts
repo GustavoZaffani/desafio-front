@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {VoltarComponent} from './voltar.component';
+import {CancelComponent} from './cancel.component';
 import {TooltipModule} from 'primeng/tooltip';
 import {ButtonModule} from 'primeng/button';
 import {RippleModule} from 'primeng/ripple';
@@ -13,12 +13,12 @@ import {RippleModule} from 'primeng/ripple';
     RippleModule,
   ],
   declarations: [
-    VoltarComponent
+    CancelComponent
   ],
   exports: [
-    VoltarComponent
+    CancelComponent
   ]
 })
-export class VoltarModule {
+export class CancelModule {
 
 }

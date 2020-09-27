@@ -1,17 +1,17 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {OnlyNumberDirective} from './onlyNumber.directive';
+import {DecimalInputDirective} from './decimalInput.directive';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    OnlyNumberDirective
+    DecimalInputDirective
   ],
   exports: [
-    OnlyNumberDirective
+    DecimalInputDirective
   ]
 })
-export class OnlyNumberModule {
+export class DecimalInputModule {
 }

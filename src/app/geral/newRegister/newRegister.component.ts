@@ -1,11 +1,11 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
-  selector: 'app-save',
-  templateUrl: './save.component.html',
-  styleUrls: ['./save.component.css']
+  selector: 'app-new-register',
+  templateUrl: './newRegister.component.html',
+  styleUrls: ['./newRegister.component.css']
 })
-export class SaveComponent {
+export class NewRegisterComponent {
 
   @Output() onClick: EventEmitter<any> = new EventEmitter();
 

@@ -1,14 +1,13 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
-  selector: 'app-save',
-  templateUrl: './save.component.html',
-  styleUrls: ['./save.component.css']
+  selector: 'app-edit',
+  templateUrl: './edit.component.html',
+  styleUrls: ['./edit.component.css']
 })
-export class SaveComponent {
+export class EditComponent {
 
   @Output() onClick: EventEmitter<any> = new EventEmitter();
-  @Input() typeButton: string = 'button';
 
   click(): void {
     this.onClick.emit();
